@@ -1,0 +1,17 @@
+<div class="mb-4 p-8 flex items-center justify-center">
+    <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+    <ng-template #title> Ejemplo de señales 8 </ng-template>
+    <ng-template #subtitle> uso del effect </ng-template>
+    
+        <p>
+            Contador - {{contador()}}
+        </p>
+    
+    <ng-template #footer>
+        <div class="flex gap-4 mt-1">
+            <p-button label="incrementar"  (click)="updateContador()" severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
+        </div>
+    </ng-template>
+    
+    </p-card>
+</div>

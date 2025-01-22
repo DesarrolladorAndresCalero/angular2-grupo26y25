@@ -1,0 +1,16 @@
+<div class="mb-4 p-8 flex items-center justify-center">
+    <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+    <ng-template #title> Ejemplo de señales 6 </ng-template>
+    <ng-template #subtitle> Señales desde modelos </ng-template>
+    
+    <div>
+    <p>Nombre completo - {{ userName() }}</p>
+    <input [(ngModel)] = userName >
+    </div>
+    
+    <ng-template #footer>
+    
+    </ng-template>
+    
+    </p-card>
+    </div>

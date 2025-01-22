@@ -1,0 +1,12 @@
+<div class="mb-4 p-8 flex items-center justify-center">
+    <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+        <ng-template #header>
+            <img alt="Card" class="w-full" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+        </ng-template>
+        <ng-template #title> Ejemplo de señales 2 </ng-template>
+        <ng-template #subtitle> Conteo automatico </ng-template>
+        <p>
+            El conteo es actualmente: {{ count() }}
+        </p>
+    </p-card>
+</div>

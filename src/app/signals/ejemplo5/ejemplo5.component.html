@@ -1,0 +1,38 @@
+<div class="mb-4 p-8 flex items-center justify-center">
+  <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+    <ng-template #title> Ejemplo de señales 5 </ng-template>
+
+    <ng-template #subtitle> Señales escribibles </ng-template>
+
+    <p>
+      <p-floatlabel variant="in">
+        <input pInputText id="in_label" #todo autocomplete="off" />
+
+        <label for="in_label">Ingresa una tarea</label>
+      </p-floatlabel>
+    </p>
+
+    <ul>
+      @for( item of todos(); track item ) {
+
+      <li>
+        {{ item }}
+      </li>
+
+      }
+    </ul>
+
+    <ng-template #footer>
+      <div class="flex gap-4 mt-1">
+        <p-button
+          label="Agregar tarea"
+          (click)="addTodo(todo)"
+          severity="secondary"
+          class="w-full"
+          [outlined]="true"
+          styleClass="w-full"
+        />
+      </div>
+    </ng-template>
+  </p-card>
+</div>
