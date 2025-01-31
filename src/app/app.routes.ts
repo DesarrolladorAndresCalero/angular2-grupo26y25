@@ -41,5 +41,21 @@ export const routes: Routes = [
   {
     path:'ejemplo9',
     loadComponent:() => import('./signals/ejemplo9/ejemplo9.component').then(m => m.Ejemplo9Component)
+  },
+  {
+    path:'ejemplo10',
+    loadComponent:() => import('./signals/ejemplo10/ejemplo10.component').then(m => m.Ejemplo10Component)
+  },
+  {
+    path:'ejemplo11',
+    loadComponent:() => import('./signals/ejemplo11/ejemplo11.component').then(m => m.Ejemplo11Component)
+  },
+  {
+    path:'ejemplo12',
+    loadComponent:() => import('./signals/ejemplo12/ejemplo12.component').then(m => m.Ejemplo12Component)
+  },
+  {
+    path:'ejemplo13',
+    loadComponent:() => import('./signals/ejemplo13/ejemplo13.component').then(m => m.Ejemplo13Component)
   }
 ];

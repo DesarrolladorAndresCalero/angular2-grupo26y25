@@ -1,0 +1,29 @@
+<div class="mb-4 p-8 flex items-center justify-center">
+  <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+    <ng-template #title> Ejemplo de señales 11 </ng-template>
+    <ng-template #subtitle> uso del untracked </ng-template>
+
+    <div>
+      <p>contador1 {{ contador1() }}</p>
+      <p-button
+        label="incrementar"
+        (click)="updateContador1()"
+        severity="secondary"
+        class="w-full"
+        [outlined]="true"
+        styleClass="w-full"
+      />
+    </div>
+    <div>
+      <p>contador2 {{ contador2() }}</p>
+      <p-button
+        label="incrementar"
+        (click)="updateContador2()"
+        severity="secondary"
+        class="w-full"
+        [outlined]="true"
+        styleClass="w-full"
+      />
+    </div>
+  </p-card>
+</div>

@@ -1,0 +1,59 @@
+<div class="mb-4 p-8 flex items-center justify-center">
+    <p-card [style]="{ overflow: 'hidden' }">
+        <ng-template #title> Ejemplo de señales 10 </ng-template>
+        <ng-template #subtitle> Listado de productos con señales computadas </ng-template>
+        <p-floatlabel>
+            <p></p>
+            <input 
+                pInputText 
+                id="search" 
+                type="text" 
+                [ngModel]="searchInput()"
+                (ngModelChange)="searchProduct($event)"
+                />
+            <label for="search">Buscar por titulo</label>
+        </p-floatlabel>
+        <div>
+            <p-table [value]="filterProducts()" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template #header>
+                    <tr>
+                        <th>Titulo</th>
+                        <th>Categoria</th>
+                        <th>Marca</th>
+                        <th>Precio</th>
+                        <th>Calificación</th>
+                    </tr>
+                </ng-template>
+                <ng-template #body let-producto>
+                    <tr>
+                        <td>{{ producto.title }}</td>
+                        <td>{{ producto.category}}</td>
+                        <td>{{ producto.brand }}</td>
+                        <td>{{ producto.price }}</td>
+                        <td>{{ producto.rating }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+            <p-button 
+                label="Página anterior" 
+                (click)="goToPrevPage()" 
+                severity="secondary" 
+                class="w-full" 
+                [outlined]="true" 
+                styleClass="w-full"
+                [disabled]=" currentPage() === 1"
+            />
+            <p-button 
+                label="Página siguiente" 
+                (click)="goToNextPage()" 
+                severity="secondary" 
+                class="w-full" 
+                [outlined]="true" 
+                styleClass="w-full"
+                [disabled]="isNextPageNotAvaible()"
+            />
+ 
+        </div>     
+    </p-card>
+</div>
+ 

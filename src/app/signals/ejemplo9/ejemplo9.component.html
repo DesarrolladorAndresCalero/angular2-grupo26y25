@@ -1,1 +1,75 @@
-<p>ejemplo9 works!</p>
+<div class="mb-4 p-8 flex items-center justify-center">
+  <p-card [style]="{ overflow: 'hidden' }">
+    <ng-template #title> Ejemplo de señales 9 </ng-template>
+    <ng-template #subtitle> calculadora de iva simple </ng-template>
+    <p></p>
+    <p></p>
+    <p-floatlabel>
+      <input
+        pInputText
+        id="iva"
+        type="number"
+        autocomplete="off"
+        min="0"
+        oninput="validity.valid || (value = 0)"
+        [value]="precio()"
+        (input)="onInputUpdate($event)"
+      />
+      <label for="iva">IVA(%)</label>
+    </p-floatlabel>
+<p></p>
+<p></p>
+    <p-floatlabel>
+        <input
+          pInputText
+          id="iva"
+          type="number"
+          autocomplete="off"
+          min="0"
+          oninput="validity.valid || (value = 0)"
+          [value]="IVAEnPorcentaje()"
+          (input)="onInputIvaUpdate($event)"
+        />
+        <label for="iva">IVA(%)</label>
+      </p-floatlabel>
+
+    <div>
+      <div class="summary">
+        <p>Resumen del total</p>
+        <p>Total IVA: {{ totalIVA() }}</p>
+        <p>Total precio: {{ total() }}</p>
+      </div>
+    </div>
+    <p-button
+      label="Guardar"
+      (click)="save()"
+      severity="secondary"
+      class="w-full"
+      [outlined]="true"
+      styleClass="w-full"
+    />
+
+    <hr />
+
+    @if(listado().length){
+    <p-table [value]="listado()" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template #header>
+        <tr>
+          <th>precio</th>
+          <th>ivaEnPorcentaje</th>
+          <th>iva</th>
+          <th>total</th>
+        </tr>
+      </ng-template>
+      <ng-template #body let-listado>
+        <tr>
+          <td>{{ listado.precio }}</td>
+          <td>{{ listado.ivaEnPorcentaje }}</td>
+          <td>{{ listado.iva }}</td>
+          <td>{{ listado.total }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+    }
+  </p-card>
+</div>

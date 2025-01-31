@@ -1,0 +1,36 @@
+<div class="mb-4 p-8 flex items-center justify-center">
+  <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+    <ng-template #title> Ejemplo de señales 12 </ng-template>
+    <ng-template #subtitle> carrito de compras con señales </ng-template>
+
+    <h3>Total del carrito: <b>{{totalPrice()}}</b></h3>
+
+    <ul>
+      @for (producto of productos(); track producto) {
+      <li>
+        {{ producto.title }} - {{ producto.price }}
+        @if (selecProductIds().includes(producto.id)) {
+        <p-button
+          label="Remover"
+          (click)="removeFromCart(producto)"
+          severity="danger"
+          class="w-full"
+          [outlined]="true"
+          styleClass="w-full"
+        />
+        } @else {
+        <p-button
+          label="Agregar"
+          (click)="addToCart(producto)"
+          severity="success"
+          class="w-full"
+          [outlined]="true"
+          styleClass="w-full"
+        />
+        }
+      </li>
+      }
+    </ul>
+    <h3>Total del carrito: <b>{{totalPrice()}}</b></h3>
+  </p-card>
+</div>
